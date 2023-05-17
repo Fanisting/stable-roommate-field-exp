@@ -9,7 +9,7 @@ python use.py
 
 The terminal would output the matching result.
 
-Here is the README file for the raw repo:
+Here is the README file for the raw repo, I expressed geniune thanks for the effort from the [owner](https://github.com/charlierproctor/matching_algorithm):
 
 # Stable Roommates Matching Algorithm
 
