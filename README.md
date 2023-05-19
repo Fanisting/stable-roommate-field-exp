@@ -1,16 +1,3 @@
-# Stable Roommates Matching Algorithm for Field Experiment
-
-## Usage
-
-open the terminal and run:
-```
-python use.py
-```
-
-The terminal would output the matching result.
-
-Here is the README file for the raw repo, I expressed geniune thanks for the effort from the [owner](https://github.com/charlierproctor/matching_algorithm):
-
 # Stable Roommates Matching Algorithm
 
 This is an implementation of the stable roommates algorithm, inspired by none other than [https://en.wikipedia.org/wiki/Stable_roommates_problem](https://en.wikipedia.org/wiki/Stable_roommates_problem).

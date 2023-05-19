@@ -66,6 +66,7 @@ def execute(prefs, print_output=True, recursion_limit=10000):
 	if print_output:
 		print("Phase 2 Complete:")
 		pprint.pprint(Person.prefsMatrix('current'))
+		outcome = Person.prefsMatrix('current')
 
 		print("\nRESULTS:\n")
 
@@ -88,4 +89,4 @@ def execute(prefs, print_output=True, recursion_limit=10000):
 	# if (not stable) and (not has_empty_column_after_phase_one):
 		# raise Exception("The match was unstable, yet there was not an empty column at the end of phase one.")
 
-	return result
+	return stable, outcome
