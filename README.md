@@ -1,11 +1,3 @@
-# Usage
-
-Store the survey data in `class` folder, and the output can be seen at root folder with names like "三年二班_匹配.csv". 
-
-Run `use.py` to get the matching results. 
-
-
-
 # Stable Roommates Matching Algorithm
 
 This is an implementation of the stable roommates algorithm, inspired by none other than [https://en.wikipedia.org/wiki/Stable_roommates_problem](https://en.wikipedia.org/wiki/Stable_roommates_problem).
