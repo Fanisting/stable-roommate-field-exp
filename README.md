@@ -1,3 +1,9 @@
+# Intro
+
+This repo aims to transform the survey data (matching preference + socio vars) into the matching outcome using Irving algorithm. The repo is designed for an ongoing field experiment. The repo achieves:
+1. output the matching outcome and whether it is stable
+2. find each one's socio-demographic vars for their peers
+
 # Usage
 
 Suppose we have the preference list and other socio-demographic variables:
@@ -25,7 +31,8 @@ For the raw data: we store the survey data in `class` folder, and the output can
 
 Run `use.py` to get the matching results. 
 
-The repo is built on open-sourced repo here 
+The repo is built on open-sourced repo [here](https://github.com/charlierproctor/matching_algorithm). The following is its README file. 
+
 # Stable Roommates Matching Algorithm
 
 This is an implementation of the stable roommates algorithm, inspired by none other than [https://en.wikipedia.org/wiki/Stable_roommates_problem](https://en.wikipedia.org/wiki/Stable_roommates_problem).
