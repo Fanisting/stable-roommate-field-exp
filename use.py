@@ -29,10 +29,12 @@ for filename in os.listdir(class_dir):
         df = pd.read_excel(filepath)
         # 奇数时排除
         people_num = df.shape[0] - 1
-        if people_num % 2 == 1:
-            # 随机选择一行，并将其对应的 'excluded' 特征设置为 1
-            drop_name = df.loc[[random.choice(df.index[1:])]]
-            drop_name['peer'] = 'excluded'
+        # if people_num % 2 == 1:
+        #     # 随机选择一行，并将其对应的 'excluded' 特征设置为 1
+        #     drop_index = random.choice(df.index[1:])
+        #     drop_name = df.loc[[drop_index]]
+        #     drop_name['peer'] = 'excluded'
+        #     df.drop(drop_index, inplace=True)
         # 将 "name" 列的值转换为列表
         name_list = df.loc[:, 'name'].tolist()
         # 随机补全prefs list
@@ -76,20 +78,31 @@ for filename in os.listdir(class_dir):
         print("Matching outcome: \n")
         print("配对：", outcome)
         # 添加 Peer数据
+        # 考虑人数为奇数下的空值问题
+        no_peer = "none"
+        for i in outcome:
+            if outcome[i] == []:
+                no_peer = i
+        # print('no peer is', no_peer)
         # 遍历字典的键值对，拼接数据
         merged_data = []
         for name in outcome.keys():
-            # 获取peer对应的行
-            own_df = df[df['name'] == name]
-            peer_df = df[df['name'] == outcome[name][0]].filter(regex='^(?!pref)')
-            # 在变量名上加上 "peer_" 前缀
-            peer_df = peer_df.add_prefix("peer_")
-            # 将两个 DataFrame 横向合并
-            own_df.reset_index(drop=True, inplace=True) # 删除原来的索引
-            peer_df.reset_index(drop=True, inplace=True)
-            merged_df = pd.concat([own_df, peer_df], axis = 1)
-            # print(merged_df)
-            merged_data.append(merged_df)
+            if name == no_peer:
+                merged_df = df[df['name'] == no_peer]
+                merged_data.append(merged_df)
+                continue
+            else:
+                # 获取peer对应的行
+                own_df = df[df['name'] == name]
+                peer_df = df[df['name'] == outcome[name][0]].filter(regex='^(?!pref)')
+                # 在变量名上加上 "peer_" 前缀
+                peer_df = peer_df.add_prefix("peer_")
+                # 将两个 DataFrame 横向合并
+                own_df.reset_index(drop=True, inplace=True) # 删除原来的索引
+                peer_df.reset_index(drop=True, inplace=True)
+                merged_df = pd.concat([own_df, peer_df], axis = 1)
+                # print(merged_df)
+                merged_data.append(merged_df)
         # 合并所有新的数据框
         result = pd.concat(merged_data, axis=0)
         print("\n数据表\n", result)
