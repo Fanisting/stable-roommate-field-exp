@@ -34,7 +34,7 @@ Run `use.py` to get the matching results.
 
 ### If the group number is not even
 
-This situation is a little bit tricky. Here the matching algorithm will determine which one to be the single one. And the `peer` variables in the single person's line will be none. 
+This situation is a little bit tricky. Here the matching algorithm will determine which one to be the single one. And the `peer` variables in the single person's line will be `NA` except the `peer_name` var = "实验员" for a o-Tree matching. 
 
 The repo is built on open-sourced repo [here](https://github.com/charlierproctor/matching_algorithm). The following is its README file. 
 
