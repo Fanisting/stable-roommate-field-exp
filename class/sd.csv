@@ -1,0 +1,6 @@
+name,gender,rank,pre_test,peer_name,peer_gender,peer_rank,peer_pre_test,willing,endo
+张三,男,A,10,李四,男,B,9,1,1
+李四,男,B,9,张三,男,A,10,0,1
+王五,女,C,8,赵六,女,D,7,1,1
+赵六,女,D,7,王五,女,C,8,0,1
+落单人,男,A,6,实验员,男,A,10,1,1

@@ -1,0 +1,7 @@
+name,gender,peer_piece,pre_test,pref1,pref2,pref3,pref4,pref5,rank,self_piece,win_tour,peer_gender,peer_name,peer_peer_piece,peer_pre_test,peer_rank,peer_self_piece,peer_win_tour
+张三,男,1,10,王五,王柳,李四,范总,杨总,A,1,1,男,王五,0,9,B,0,0
+王五,男,0,9,张三,王柳,李四,范总,杨总,B,0,0,男,张三,1,10,A,1,1
+王柳,男,0,8,张三,王五,李四,杨总,范总,C,1,1,男,李四,1,7,D,1,1
+李四,男,1,7,张三,王五,王柳,范总,杨总,D,1,1,男,王柳,0,8,C,1,1
+范总,女,0,6,王柳,张三,王五,杨总,李四,A,0,0,女,杨总,1,5,B,1,1
+杨总,女,1,5,李四,张三,王五,范总,王柳,B,1,1,女,范总,0,6,A,0,0

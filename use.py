@@ -3,7 +3,6 @@
 # 本程序使用了开源程序库来实现算法部分： https://github.com/charlierproctor/matching_algorithm
 # 注意事项：
 # 程序默认单个问卷文件中，孩子的名字是唯一确定的，不存在重名情况
-# 本程序适用于两人小组配对，因此总人数为奇数时会提前随机排除一人，将该同学在生成结果中改名为"张三(out)"
 # 默认的preference list是不完整的，程序会随机补足list
 
 import matchmaker
@@ -22,8 +21,8 @@ class_dir = os.path.join(script_dir, "class")
 
 # 遍历所有.xlsx文件，并读取数据
 for filename in os.listdir(class_dir):
-    print('\n 处理文件: ', filename)
     if filename.endswith(".xlsx"):
+        print('\n 处理文件: ', filename)
         # 读取文件
         filepath = os.path.join(class_dir, filename)
         df = pd.read_excel(filepath)
@@ -112,7 +111,7 @@ for filename in os.listdir(class_dir):
         # 导出
         # 构建"class"文件夹的绝对路径
         outcome_dir = os.path.join(script_dir, "outcomes")
-        csv_name = filename[:-5]+"_匹配"+".csv"
+        csv_name = filename[:-5]+"_endo"+".csv"
         path = os.path.join(script_dir, csv_name)
         path.replace('\\', '/')
         result.to_csv(path, index=False)
