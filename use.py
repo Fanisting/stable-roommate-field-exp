@@ -83,14 +83,14 @@ for filename in os.listdir(class_dir):
         for i in outcome:
             if outcome[i] == []:
                 no_peer = i
-        # print('no peer is', no_peer)
+        print('no peer is', no_peer)
         # 遍历字典的键值对，拼接数据
         merged_data = []
         for name in outcome.keys():
             if name == no_peer:
-                merged_df = df[df['name'] == no_peer]
+                merged_df = df[df['name'] == no_peer].copy()
+                merged_df.loc[:, 'peer_name'] = '实验员'
                 merged_data.append(merged_df)
-                continue
             else:
                 # 获取peer对应的行
                 own_df = df[df['name'] == name]
