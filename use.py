@@ -70,6 +70,7 @@ for filename in os.listdir(class_dir):
         cols = ["name"] + [col for col in df.columns if col.startswith("pref")]
         # 数据表转为字典
         prefs = df[cols].set_index('name').T.to_dict('list')
+        print('prefs list is: \n', prefs)
         # Input: df of preferences df[name, pref-1 to pref-n]
         # Output: the matching outcome (stable roommate matching)
         # execute the match

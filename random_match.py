@@ -19,7 +19,7 @@ class_dir = os.path.join(script_dir, "class")
 
 # 遍历所有.xlsx文件，并读取数据
 for filename in os.listdir(class_dir):
-    if filename.endswith(".xlsx"):
+    if filename.endswith("_merge.xlsx"):
         print('\n 处理文件: ', filename)
         # 读取文件
         filepath = os.path.join(class_dir, filename)
